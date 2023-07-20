@@ -22,8 +22,12 @@ Install the dependencies and devDependencies and start the server.
 
 ## Docker
 
+There are two environment variables possible pointing to HOST and PORT of your SMTP server
+- MAIL_SERVER_HOST
+- MAIL_SERVER_PORT
+
 ```sh
-docker run --name email-service -p 8080:8080 -d wylliamsantos/email-service
+docker run --name email-service -e MAIL_SERVER_HOST=localhost -e MAIL_SERVER_PORT=1026 -p 8080:8080 -d wylliamsantos/email-service
 ```
 
 > Note 1: Image is pushed automatically to DockerHub when you commit code using Github Actions.
